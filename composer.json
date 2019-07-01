@@ -1,0 +1,13 @@
+{
+    "name": "javiercanon/blog",
+    "require": {
+        "phpunit/phpunit": "^7.0"
+        "php/php": "^7.0"
+    },
+    "authors": [
+        {
+            "name": "javiercanon",
+            "email": "javiercanonguzman@gmail.com"
+        }
+    ]
+}
