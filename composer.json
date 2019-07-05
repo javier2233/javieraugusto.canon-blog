@@ -1,13 +1,21 @@
 {
     "name": "javiercanon/blog",
     "require": {
-        "phpunit/phpunit": "^7.0"
-        "php/php": "^7.0"
+        "php": ">=7.0"
     },
-    "authors": [
-        {
-            "name": "javiercanon",
-            "email": "javiercanonguzman@gmail.com"
+    "require-dev": {
+        "behat/behat": "~3.2",
+        "phpunit/phpunit": "~5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mpweb\\": "src/Blog/"
         }
-    ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MpwebUnit\\": "test/BlogUnit/",
+            "MpwebIntegration\\": "test/BlogIntegration/"
+        }
+    }
 }
