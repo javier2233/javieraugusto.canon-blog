@@ -9,13 +9,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Mpweb\\": "src/Blog/"
+            "Blog\\": "src/Blog/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MpwebUnit\\": "test/BlogUnit/",
-            "MpwebIntegration\\": "test/BlogIntegration/"
+            "BlogUnit\\": "test/BlogUnit/",
+            "BlogIntegration\\": "test/BlogIntegration/"
         }
     }
 }
