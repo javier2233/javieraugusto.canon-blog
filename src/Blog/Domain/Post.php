@@ -11,14 +11,32 @@ namespace Blog\Domain;
 
 class Post
 {
-    /* 2000*/
+    
     private $body;
-    /* 50*/
+    private $limitBody = 2000;
+    private $limitTitle = 50;
+    private $validator;
     private $title;
 
-    public function __construct($body, $title)
+    public function __construct($body, $title, Validation $validator)
     {
         $this->body = $body;
-        $this->title= $title;
+        $this->validator = $validator;
+        $this->title = $title;
+
+        $valid_body = $this->validator->validateLimitChars($body, $this->limitBody);
+        $valid_title = $this->validator->validateLimitChars($title, $this->limitTitle);
+        
+        if($valid_body && $valid_title){
+            return self;
+        }
     }
+
+    private function validateLimitChars($body, $limit){
+        $bodyChars = strlen($body);
+        if($bodyChars > $this->limitBody){
+            return false;
+        }
+    }
+    
 }
